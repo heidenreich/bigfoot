@@ -6,19 +6,21 @@ var BigfootCollection = Parse.Collection.extend({
 })
 
 
-var BigfootView = Parse.View.extend({
+var ListView = Parse.View.extend({
 
-	class: 'bigfoot-view',
+	className: 'bigfoot-view',
 
 	bigfootTemplate: _.template($('#bigfoot-template').text()),
 
 	initialize: function(){
-		$('.bigfoot-list').html(this.el);
+		$('.bigfoot-list').prepend(this.el);
 		this.render()
 
 	},
 
 	render: function(){
-		this.$el.html(thisbigfootTemplate(this.models.attributes))
+		this.$el.html(this.bigfootTemplate({model: this.model}));
+
 	}
 })
+

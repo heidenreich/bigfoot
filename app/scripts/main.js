@@ -1,4 +1,4 @@
-console.log('bigfoot is scary');
+console.log('You can DO IT!!');
 
  
 $(function(){
@@ -6,10 +6,15 @@ $(function(){
 	Parse.initialize("pXomYWhXkM6KRovF8EE9WPa2vxzFTRuvmUHcjap1", "LFnPXFI5lj1FEmpmpra5ulMO96X2OXbNAqN7xw9p");
 
 	window.bigfeet = new BigfootCollection();
-  	bigfeet.fetch();
-
   	
-	
+  	bigfeet.fetch({
+  		success: function(){
+  			bigfeet.each(function(bf){
+  				new ListView({model: bf});
+  			})
+  		}
+  	});
+ 	
 })
 
 $('.upload-button').click(function(){
@@ -22,9 +27,12 @@ $('.upload-button').click(function(){
 
 	});
 
+	new ListView({
+		model: bigfoot
+	})
+
 	$('.js-name').val(''),
 	$('.js-city').val(''),
 	$('.js-time').val('')
 
 })
-
