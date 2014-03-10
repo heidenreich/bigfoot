@@ -20,14 +20,23 @@
         <!-- endbuild -->
         <script src="bower_components/modernizr/modernizr.js"></script>
 
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+        <style type="text/css">
+          html { height: 100% }
+          body { height: 100%; margin: 0; padding: 0 }
+          #map-canvas { height: 100% }
+        </style>
+        <script src="https://maps.googleapis.com/maps/api/js?key=&sensor=false"
+  type="text/javascript"></script>
+
     </head>
     <body>
         <!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <!-- Button trigger modal -->
-    <!--  
-        <img src="images/woods.jpg" class="img-responsive" alt="Responsive image"> -->
+     
+        <img src="images/woods.jpg" class="img-responsive" alt="Responsive image">
         <!-- Modal -->
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -52,25 +61,31 @@
         </div>
 
         <div class="container">
-            <div class="header">
-                <ul class="nav nav-pills pull-right">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
+            <div class="page-header">
+                <h1>Bigfoot Tracker<!--  <small>post your sightings</small> --></h1>
+                <ul class="nav nav-tabs nav-justified">
+                    <li class="" data-toggle="modal" data-target="#myModal"><a href="#">Bigfoot spotter Information</a></li>
+                    <li ><a href="#">Bigfoot Information</a></li>
                 </ul>
-                <h3 class="text-muted">bigfoot</h3>
+            
+             
+              
+             <!--    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                    Bigfoot
+                </button> -->
             </div>
-
-            <div class="jumbotron">
-                <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-                    Post a Yetti
-                </button>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="jumbotron">
+                        <div class="bigfoot-list"></div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="jumbotron">
+                        <div id="map-canvas" style="width: 100%; height: 500px;"></div>
+                    </div>
+                </div>
             </div>
-
-            <div class="jumbotron">
-                <div class="bigfoot-list"></div>
-            </div>
-
             <div class="footer">
                 <p>♥ from the jtheidenreich</p>
             </div>
@@ -81,6 +96,12 @@
             <h3>Hello</h3>
             <span> <%= model.get('name') %> </span>
         </script>
+
+         <style type="text/css">
+  html { height: 100% }
+  body { height: 100%; margin: 0; padding: 0 }
+  #map-canvas { height: 500px; }
+</style>
 
 
         <!-- build:js scripts/vendor.js -->

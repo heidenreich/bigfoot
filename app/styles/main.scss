@@ -12,16 +12,24 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 .img-responsive {
     position: absolute;
     z-index: -20;
-    height: auto;
-    width: 100%;
+    // height: auto;
+    // width: 100%;
 }
 
+h1{
+    color: white;
+}
+
+.nav-tabs-justified > li > a, .nav-tabs.nav-justified > li > a {
+border-bottom: none;
+border-radius: 4px 4px 0 0;
+}
 
 /* Space out content a bit */
-body {
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
+// body {
+//     padding-top: 20px;
+//     padding-bottom: 20px;
+// }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
@@ -57,6 +65,7 @@ body {
 
 /* Main marketing message and sign up button */
 .jumbotron {
+    background: rgba(175, 132, 57, .5);
     text-align: center;
     border-bottom: 1px solid #e5e5e5;
     .btn {
@@ -75,9 +84,9 @@ body {
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-    .container {
-        max-width: 730px;
-    }
+    // .container {
+    //     max-width: 730px;
+    // }
 
     /* Remove the padding we set earlier */
     .header,
@@ -97,3 +106,23 @@ body {
         border-bottom: 0;
     }
 }
+
+
+
+.bigfoot-list {
+    height: 500px;
+    background: #F7F7FA;
+    overflow-y: scroll;
+
+}
+
+
+
+
+.message-list {
+            height: 600px;
+            background: #F7F7FA;
+            overflow-y: scroll; 
+            overflow-x: hidden; 
+            border-radius: 6px;
+        }
